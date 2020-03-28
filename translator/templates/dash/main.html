@@ -4,3 +4,9 @@
 {% for translation in translations %}
     {{translation.text}}
 {% endfor %}
+<div>
+
+    {% for letter, x in alphabet.items %}
+        {{letter}} -> {{x}} ||
+    {% endfor %}
+</div>
