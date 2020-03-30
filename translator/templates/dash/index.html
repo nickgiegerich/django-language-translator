@@ -2,40 +2,46 @@
 
 {% block content %}
 
-<div class="center-column float-left">
-	<div class="col-md">
-		<div class="card card-body">
-            <h5>Numbers</h5>
-            <hr>
-            <div class="col-lg-12">
-                <p>
-                {% for number in numbers %}
-                    <button type="button" class="btn btn-sq btn-primary mb-1">
-                        {{number}}
-                    </button>
-                {% endfor %}
-                </p>
-            </div>
-		</div>
-	</div>
-</div>
+<div class="row">
+    <div class="col-lg-4">
 
-<div class="center-column float-left">
-	<div class="col-md">
-		<div class="card card-body">
-            <h5>Alphabet</h5>
-            <hr>
-            <div class="col-lg-12">
-                <p>
-                {% for letter in alphabet %}
-                    <button type="button" class="btn btn-sq btn-primary mb-1">
-                        {{letter}}
-                    </button>
-                {% endfor %}
-                </p>
+        <div class="center-column float-left">
+            <div class="col-md">
+                <div class="card card-body">
+                    <h5>Russian Alphabet</h5>
+                    <hr>
+                    <div class="col-lg-12">
+                        <p>
+                        {% for letter in alphabet %}
+                            <button type="button" data-id="{% url 'alphabetModal' letter.id %}" class="alphabet-modal btn btn-sq btn-primary mb-1">
+                                {{letter}}
+                            </button>
+                        {% endfor %}
+                        </p>
+                    </div>
+                </div>
             </div>
-		</div>
-	</div>
+        </div>
+
+        <div class="center-column float-left">
+            <div class="col-md">
+                <div class="card card-body">
+                    <h5>Russian Numbers</h5>
+                    <hr>
+                    <div class="col-lg-12">
+                        <p>
+                        {% for number in numbers %}
+                            <button type="button" class="btn btn-sq btn-primary mb-1">
+                                {{number}}
+                            </button>
+                        {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}
